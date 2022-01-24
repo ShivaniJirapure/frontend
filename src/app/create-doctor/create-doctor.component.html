@@ -1,0 +1,63 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="navbar-brand">Add New Doctor Details</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="doctor.name"
+        name="name"
+        required=true;
+      />
+    </div>
+
+    <div class="form-group">
+      <label> Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        [(ngModel)]="doctor.age"
+        name="age"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <input
+        type="text"
+        class="form-control"
+        id="gender"
+        [(ngModel)]="doctor.gender"
+        name="gender"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Specialist</label>
+      <input
+        type="text"
+        class="form-control"
+        id="specialist_fields"
+        [(ngModel)]="doctor.specialist_fields"
+        name="specialist_fields"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>No of patient</label>
+      <input
+        type="number"
+        class="form-control"
+        id="no_ofPatient"
+        [(ngModel)]="doctor.no_ofPatient"
+        name="no_ofPatient"
+      />
+    </div>
+
+    <br />
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>

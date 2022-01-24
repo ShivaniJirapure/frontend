@@ -1,0 +1,53 @@
+<p class="navbar-brand">Patient list</p>
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        placeholder="search by id"
+      />
+    </div>
+    <br />
+    <br />
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>VisitedDoctor</th>
+          <th>Date Of Visit</th>
+          <th>Prescription</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patient | filter: searchText">
+          <td>{{ patient.id }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.visitedDoctor }}</td>
+          <td>{{ patient.dateOfVisit }}</td>
+          <td>{{ patient.prescription }}</td>
+          <td>
+            <button
+              (click)="deletePatient(patient.id)"
+              class="btn btn-danger"
+              style="margin-left: 10px"
+            >
+              Delete
+            </button>
+          </td>
+          <td>
+            <button (click)="patientDetails(patient.id)" class="btn btn-success">
+              View
+            </button>
+          </td>
+          <!-- style="margin-left: 10px" -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

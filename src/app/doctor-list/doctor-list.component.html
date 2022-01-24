@@ -1,0 +1,43 @@
+<p class="navbar-brand">Doctor list</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Specialist</th>
+      <th>No_of_Patient</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of doctors">
+      <td>{{ doctor.id }}</td>
+      <td>{{ doctor.name }}</td>
+      <td>{{ doctor.age }}</td>
+      <td>{{ doctor.gender }}</td>
+      <td>{{ doctor.specialist_fields }}</td>
+      <td>{{ doctor.no_ofPatient }}</td>
+
+      <td>
+        <button
+          (click)="deleteDoctor(doctor.id)"
+          class="btn btn-danger"
+          style="margin-left: 10px"
+        >
+          Delete
+        </button>
+      </td>
+      <td>
+        <button
+          (click)="doctorDetails(doctor.id)"
+          class="btn btn-success"
+          style="margin-left: 10px"
+        >
+          View
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

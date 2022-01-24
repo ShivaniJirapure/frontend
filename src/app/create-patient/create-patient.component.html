@@ -1,0 +1,87 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="navbar-brand">Add New Patient Details</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label> Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="patient.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label> Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        [(ngModel)]="patient.age"
+        name="age"
+      />
+    </div>
+
+    <!-- <div class="form-group">
+        <label> visitedDoctor</label>
+        <input
+          type="text"
+          class="form-control"
+          id="visitedDoctor"
+          [(ngModel)]="patient.visitedDoctor"
+          name="visitedDoctor"
+        /> class="form-select"
+      </div> -->
+    <div class="form-group">
+      <label> Visited Doctor</label>
+      <div>
+        <select
+          class="form-control"
+          id="visitedDoctor"
+          [(ngModel)]="patient.visitedDoctor"
+          name="visitedDoctor"
+          aria-label="Default select example"
+        >
+          <option selected>Dr. Kumar Rajan</option>
+          <option>Dr. Raj Deshmukh</option>
+          <option>Dr. Urvashi Bhattacharya</option>
+          <option>Dr. Ravi Shirke</option>
+          <option>Dr. Nikita Charjan</option>
+        </select>
+      </div>
+      <!-- <input
+          type="text"
+          class="form-control"
+          id="visitedDoctor"
+          [(ngModel)]="patient.visitedDoctor"
+          name="visitedDoctor" 
+        /> -->
+    </div>
+
+    <div class="form-group">
+      <label>Date Of Visit</label>
+      <input
+        type="date"
+        class="form-control"
+        id="dateOfVisit"
+        [(ngModel)]="patient.dateOfVisit"
+        name="dateOfVisit"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Prescription</label>
+      <input
+        type="text"
+        class="form-control"
+        id="prescription"
+        [(ngModel)]="patient.prescription"
+        name="prescription"
+      />
+    </div>
+
+    <br />
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>
